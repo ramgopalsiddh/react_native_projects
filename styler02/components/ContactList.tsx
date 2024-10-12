@@ -5,27 +5,27 @@ export default function ContactList() {
     const contacts = [
         {
             uid: 1,
-            name: 'Hitesh choudhary',
-            status: 'Just an extra ordinary teacher',
-            imageUrl: 'https://avatars.githubusercontent.com/u/11613311?v=4',
+            name: 'Ram Gopal Siddh',
+            status: 'A half-learned engineer',
+            imageUrl: 'https://avatars.githubusercontent.com/u/82461166?v=4',
         },
         {
             uid: 2,
-            name: 'Anurag Tiwari',
-            status: 'I ❤️ To Code and teach!',
-            imageUrl: 'https://avatars.githubusercontent.com/u/94738352?v=4',
+            name: 'Suraj Nath Siddh',
+            status: 'Maker, Working at Grafana on Tempo ',
+            imageUrl: 'https://avatars.githubusercontent.com/u/9503187?v=4',
         },
         {
             uid: 3,
-            name: 'Sanket Singh',
-            status: 'Making your GPay smooth',
-            imageUrl: 'https://avatars.githubusercontent.com/u/29747452?v=4',
+            name: 'Animesh-Ghosh',
+            status: 'I ❤️ To Code with Rbuy and Python',
+            imageUrl: 'https://avatars.githubusercontent.com/u/34956994?v=4',
         },
         {
             uid: 4,
-            name: 'Anirudh Jwala',
-            status: 'Building secure Digital banks',
-            imageUrl: 'https://avatars.githubusercontent.com/u/25549847?v=4',
+            name: 'Abhishek Bairwa',
+            status: 'Building Things Using Salesforce',
+            imageUrl: 'https://avatars.githubusercontent.com/u/70994232?v=4',
         },
     ]
   return (
@@ -40,8 +40,10 @@ export default function ContactList() {
                     uri: imageUrl
                 }}
                 style={styles.userImage} />
-                <Text style={styles.userName}>{name}</Text>
-                <Text style={styles.userStatus}>{status}</Text>
+                <View>
+                    <Text style={styles.userName}>{name}</Text>
+                    <Text style={styles.userStatus}>{status}</Text>
+                </View>    
             </View>
         ))}
       </ScrollView>
@@ -50,14 +52,39 @@ export default function ContactList() {
 }
 
 const styles = StyleSheet.create({
-    headingText: {},
-    container: {},
-    userCard: {},
+    headingText: {
+        fontSize: 24,
+        fontWeight: 'bold',
+        paddingHorizontal: 10,
+        marginBottom: 8,
+    },
+    container: {
+        paddingHorizontal: 16,
+        marginBottom: 4,
+    },
+    userCard: {
+        flex: 1,
+        flexDirection: 'row',
+        alignItems: 'center',
+        marginBottom: 4,
+        backgroundColor: '#8D3DAF',
+        padding: 4,
+        borderRadius: 14,
+        borderTopLeftRadius: 60,
+        borderBottomLeftRadius: 60,
+    },
     userImage: {
         width: 60,
         height: 60,
-        borderRadius: 30
+        borderRadius: 30,
+        marginRight: 14,
     },
-    userName: {},
-    userStatus: {},
+    userName: {
+        fontSize: 16,
+        fontWeight: '600',
+        color: '#000'
+    },
+    userStatus: {
+        fontSize: 12,
+    },
 })
