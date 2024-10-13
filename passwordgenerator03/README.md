@@ -1,3 +1,12 @@
+# Screenshots
+<img src="screenshots/empety_home.jpg">
+<img src="screenshots/password_required.jpg">
+<img src="screenshots/when_input_is_3.jpg">
+<img src="screenshots/when_input_is_18(cross_max_limit).jpg">
+<img src="screenshots/password_generated.jpg">
+
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
