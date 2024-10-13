@@ -19,7 +19,7 @@ export default function App() {
   const [password, setPassword] = useState('')
   const [isPassGenerated, setIsPassGenerated] = useState(false)
 
-  const [lowerCase, setLowerCase] = useState(false)
+  const [lowerCase, setLowerCase] = useState(true)
   const [upperCase, setUpperCase] = useState(false)
   const [numbers, setNumbers] = useState(false)
   const [symbols, setSymbols] = useState(false)
@@ -152,7 +152,9 @@ export default function App() {
                 <TouchableOpacity 
                 disabled={!isValid}
                 style={styles.primaryBtn}
-                onPress={handleSubmit}
+                onPress={ () => {
+                  handleSubmit()
+                }}
                 >
                   <Text style={styles.primaryBtnTxt}>Generate Password</Text>
                 </TouchableOpacity>
