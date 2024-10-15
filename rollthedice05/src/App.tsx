@@ -29,6 +29,7 @@ const Dice = ({imageUrl}: DiceProps):JSX.Element => {
 
 export default function App(): JSX.Element {
   const [diceImage, setDiceImage] = useState<ImageSourcePropType>(DiceOne)
+  const [isPressed, setIsPressed] = useState(false);  // Track if button is pressed
 
   const rollDiceOnTap = () => {
     let randomNumber = Math.floor(Math.random() * 6) + 1;
@@ -58,13 +59,20 @@ export default function App(): JSX.Element {
     }
 
     ReactNativeHapticFeedback.trigger("impactHeavy", options);
-
   }
 
   return (
     <View style={styles.container}>
       <Dice imageUrl={diceImage}/>
-      <Pressable onPress={rollDiceOnTap}>
+      <Pressable
+        onPress={rollDiceOnTap}
+        onPressIn={() => setIsPressed(true)}   // Set pressed state to true
+        onPressOut={() => setIsPressed(false)} // Reset pressed state
+        style={[
+          styles.rollDiceBtn,                 // Default style
+          isPressed && styles.pressedStyle     // Change style when pressed
+        ]}
+      >
         <Text style={styles.rollDiceBtnText}>
           Roll the dice
         </Text>
@@ -80,22 +88,25 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     backgroundColor: '#FFF2F2',
   },
-  diceContainer: {
-    margin: 12,
-  },
   diceImage: {
     width: 200,
     height: 200,
   },
-  rollDiceBtnText: {
+  rollDiceBtn: {
     paddingVertical: 10,
     paddingHorizontal: 40,
     borderWidth: 2,
     borderRadius: 8,
     borderColor: '#E5E0FF',
+    backgroundColor: '#FFFFFF',
+  },
+  rollDiceBtnText: {
     fontSize: 16,
-    color: '#8EA7E9',
+    color: '#080808',
     fontWeight: '700',
     textTransform: 'uppercase',
   },
-})
+  pressedStyle: {
+    backgroundColor: '#8a8a8a',
+  }
+});
