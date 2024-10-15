@@ -1,7 +1,8 @@
-import { Image, ImageSourcePropType, Pressable, StyleSheet, Text, View } from 'react-native';
+import { Image, ImageSourcePropType, Pressable, StyleSheet, View, Linking, Text } from 'react-native';
 import type { PropsWithChildren } from 'react';
 import React, { useState } from 'react';
 import ReactNativeHapticFeedback from "react-native-haptic-feedback";
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 
 import DiceOne from '../assets/One.png'
 import DiceTwo from '../assets/Two.png'
@@ -19,13 +20,6 @@ const options = {
   ignoreAndroidSystemSettings: false,
 };
 
-const Dice = ({imageUrl}: DiceProps):JSX.Element => {
-  return (
-    <View>
-      <Image style={styles.diceImage} source={imageUrl} />
-    </View>
-  )
-}
 
 export default function App(): JSX.Element {
   const [diceImage, setDiceImage] = useState<ImageSourcePropType>(DiceOne)
@@ -61,6 +55,22 @@ export default function App(): JSX.Element {
     ReactNativeHapticFeedback.trigger("impactHeavy", options);
   }
 
+  // function for show dice image and change when press image
+  const Dice = ({imageUrl}: DiceProps):JSX.Element => {
+    return (
+      <View>
+        <Pressable onPress={rollDiceOnTap}>
+          <Image style={styles.diceImage}  source={imageUrl} />
+        </Pressable>
+      </View>
+    )
+  }
+
+  // function for open link
+  const openLink = (url: string) => {
+    Linking.openURL(url);
+  }
+
   return (
     <View style={styles.container}>
       <Dice imageUrl={diceImage}/>
@@ -77,6 +87,22 @@ export default function App(): JSX.Element {
           Roll the dice
         </Text>
       </Pressable>
+
+      {/* Social media icons at the bottom */}
+      <View style={styles.socialLinks}>
+        <Pressable onPress={() => openLink('https://twitter.com/ramgopalsiddh1')} style={styles.iconWrapper}>
+          <FontAwesome name="twitter" size={50} color="#1DA1F2" />
+        </Pressable>
+        <Pressable onPress={() => openLink('https://www.linkedin.com/in/ramgopalsiddh')} style={styles.iconWrapper}>
+          <FontAwesome name="linkedin" size={50} color="#0077B5" />
+        </Pressable>
+        <Pressable onPress={() => openLink('https://github.com/ramgopalsiddh')} style={styles.iconWrapper}>
+          <FontAwesome name="github" size={50} color="#333" />
+        </Pressable>
+        <Pressable onPress={() => openLink('https://ramgopal.dev')} style={styles.iconWrapper}>
+          <FontAwesome name="user" size={50} color="#000" />
+        </Pressable>
+      </View>
     </View>
   )
 }
@@ -99,6 +125,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     borderColor: '#E5E0FF',
     backgroundColor: '#FFFFFF',
+    marginVertical: 20,
   },
   rollDiceBtnText: {
     fontSize: 16,
@@ -107,6 +134,20 @@ const styles = StyleSheet.create({
     textTransform: 'uppercase',
   },
   pressedStyle: {
-    backgroundColor: '#8a8a8a',
-  }
+    backgroundColor: '#8A8A8A',
+  },
+  socialLinks: {
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center',
+    width: '90%',
+    position: 'absolute',
+    bottom: 10,
+  },
+  iconWrapper: {
+    borderWidth: 3,
+    borderColor: '#8A8A8A',
+    borderRadius: 20,
+    padding: 8, 
+  },
 });
