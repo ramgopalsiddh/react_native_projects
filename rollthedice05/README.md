@@ -1,3 +1,12 @@
+## Demo Video
+[![Watch the YouTube Short](https://img.youtube.com/vi/4G-YOSEsSGE/0.jpg)](https://youtube.com/shorts/4G-YOSEsSGE?feature=share)
+
+
+# Screenshots
+<img src="screenshots/IMG_20241018_173058.jpg">
+<img src="screenshots/IMG_20241018_173131.jpg">
+<img src="screenshots/IMG_20241018_173210.jpg">
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
