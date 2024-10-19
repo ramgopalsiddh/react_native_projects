@@ -1,3 +1,15 @@
+## Demo Video
+[![Watch the YouTube Short](https://img.youtube.com/vi/uDUrSzlcnqg/0.jpg)](https://youtube.com/shorts/uDUrSzlcnqg?feature=share)
+
+
+# Screenshots
+<img src="screenshots/01_home.jpg">
+<img src="screenshots/02_player_X_turn.jpg">
+<img src="screenshots/03_draw_game.jpg">
+<img src="screenshots/04_cricle_win_game.jpg">
+<img src="screenshots/05_cross_win_game.jpg">
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
