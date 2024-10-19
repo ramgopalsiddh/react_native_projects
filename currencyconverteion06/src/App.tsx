@@ -64,6 +64,7 @@ function App(): React.JSX.Element  {
             onChangeText={setInputValue}
             keyboardType='number-pad'
             placeholder='Enter amount in rupess'
+            style={styles.textInput}
              />
           </View>
           {resultValue && (
@@ -96,7 +97,7 @@ function App(): React.JSX.Element  {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#515151',
+    backgroundColor: '#FFF2F2',
   },
   topContainer: {
     flex: 1,
@@ -110,10 +111,10 @@ const styles = StyleSheet.create({
   },
   rupee: {
     marginRight: 8,
-
-    fontSize: 22,
+    fontSize: 30,
     color: '#000000',
     fontWeight: '800',
+   
   },
   rupeesContainer: {
     flexDirection: 'row',
@@ -150,6 +151,10 @@ const styles = StyleSheet.create({
   selected: {
     backgroundColor: '#ffeaa7',
   },
+  textInput: {
+    fontWeight: '900',
+    fontSize: 30,
+  }
 });
 
 
