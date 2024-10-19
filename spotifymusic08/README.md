@@ -1,3 +1,13 @@
+## Demo Video
+[![Watch the YouTube Short](https://img.youtube.com/vi/hFo4ozL4Ljg/0.jpg)](https://youtube.com/shorts/hFo4ozL4Ljg?feature=share)
+
+
+# Screenshots
+<img src="screenshots/Screenshot_2024-10-19-00-38-52-048_com.spotifymusic08.jpg">
+<img src="screenshots/Screenshot_2024-10-19-00-38-59-729_com.spotifymusic08.jpg">
+
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
