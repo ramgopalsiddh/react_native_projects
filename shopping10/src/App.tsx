@@ -10,12 +10,12 @@ import {createNativeStackNavigator} from "@react-navigation/native-stack"
 import Home from './screens/Home'
 import Details from './screens/Details'
 
-export type RootStackParamList = {
+export type RootStackPramList = {
   Home: undefined;
   Details: {product: Product}
 };
 
-const Stack = createNativeStackNavigator<RootStackParamList>()
+const Stack = createNativeStackNavigator<RootStackPramList>()
 
 
 const App = () => {
