@@ -1,3 +1,12 @@
+# Screenshots
+
+## Home Screen
+<img src="screenshots/home_screen.jpg">
+
+## Details Screen
+<img src="screenshots/details_screen.jpg">
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
